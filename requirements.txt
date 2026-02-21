@@ -1,0 +1,8 @@
+pandas
+pyyaml
+yfinance
+requests
+pyarrow
+xgboost
+fastapi
+uvicorn
