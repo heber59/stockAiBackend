@@ -1,0 +1,5 @@
+update_data
+generate_features
+train_model
+evaluate_model
+save_model

@@ -1,0 +1,3 @@
+symbols: ["AAPL", "MSFT", "VRT", "AVGO"]
+alpha_vantage_api_key: "YOUR_ALPHA_VANTAGE_API_KEY"
+data_dir: "data/raw"
