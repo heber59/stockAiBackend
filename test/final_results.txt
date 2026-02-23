@@ -1,0 +1,113 @@
+/home/joka/.local/lib/python3.12/site-packages/xgboost/training.py:200: UserWarning: [15:24:53] WARNING: /__w/xgboost/xgboost/src/learner.cc:782: 
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+/home/joka/.local/lib/python3.12/site-packages/xgboost/training.py:200: UserWarning: [15:24:53] WARNING: /__w/xgboost/xgboost/src/learner.cc:782: 
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+/home/joka/.local/lib/python3.12/site-packages/xgboost/training.py:200: UserWarning: [15:24:53] WARNING: /__w/xgboost/xgboost/src/learner.cc:782: 
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+/home/joka/.local/lib/python3.12/site-packages/xgboost/training.py:200: UserWarning: [15:24:53] WARNING: /__w/xgboost/xgboost/src/learner.cc:782: 
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+Starting training pipeline for symbols: ['AAPL', 'MSFT', 'VRT', 'AVGO']
+
+==============================
+SYMBOL: AAPL
+==============================
+Loading feature data for AAPL from data/features/AAPL.parquet...
+Training on 9073 rows. Testing on 2269 rows.
+Model training completed.
+Evaluating model for AAPL...
+
+--- Metrics for AAPL ---
+Accuracy:  0.5910
+Precision (Buy Signal): 0.4255
+
+Full Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.61      0.92      0.73      1369
+           1       0.43      0.09      0.15       900
+
+    accuracy                           0.59      2269
+   macro avg       0.52      0.50      0.44      2269
+weighted avg       0.53      0.59      0.50      2269
+
+Error training AAPL: No module named 'matplotlib'
+
+==============================
+SYMBOL: MSFT
+==============================
+Loading feature data for MSFT from data/features/MSFT.parquet...
+Training on 8013 rows. Testing on 2004 rows.
+Model training completed.
+Evaluating model for MSFT...
+
+--- Metrics for MSFT ---
+Accuracy:  0.5434
+Precision (Buy Signal): 0.3998
+
+Full Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.66      0.58      0.62      1266
+           1       0.40      0.48      0.44       738
+
+    accuracy                           0.54      2004
+   macro avg       0.53      0.53      0.53      2004
+weighted avg       0.56      0.54      0.55      2004
+
+Error training MSFT: No module named 'matplotlib'
+
+==============================
+SYMBOL: VRT
+==============================
+Loading feature data for VRT from data/features/VRT.parquet...
+Training on 1475 rows. Testing on 369 rows.
+Model training completed.
+Evaluating model for VRT...
+
+--- Metrics for VRT ---
+Accuracy:  0.4201
+Precision (Buy Signal): 0.3846
+
+Full Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.43      0.76      0.55       170
+           1       0.38      0.13      0.19       199
+
+    accuracy                           0.42       369
+   macro avg       0.41      0.45      0.37       369
+weighted avg       0.40      0.42      0.35       369
+
+Error training VRT: No module named 'matplotlib'
+
+==============================
+SYMBOL: AVGO
+==============================
+Loading feature data for AVGO from data/features/AVGO.parquet...
+Training on 3292 rows. Testing on 823 rows.
+Model training completed.
+Evaluating model for AVGO...
+
+--- Metrics for AVGO ---
+Accuracy:  0.5492
+Precision (Buy Signal): 0.5205
+
+Full Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.74      0.64       442
+           1       0.52      0.33      0.41       381
+
+    accuracy                           0.55       823
+   macro avg       0.54      0.53      0.52       823
+weighted avg       0.54      0.55      0.53       823
+
+Error training AVGO: No module named 'matplotlib'

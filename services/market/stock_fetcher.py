@@ -71,15 +71,23 @@ class DataFetcher:
     def _standardize_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:
         """Ensures the dataframe has a standardized format (DateTime index, specific columns)."""
         df.index = pd.to_datetime(df.index)
-        # Ensure only common OHLCV columns exist and are named correctly
-        cols_to_keep = ["Open", "High", "Low", "Close", "Volume"]
-        # In case of yfinance, keep Dividends/Stock Splits if they exist, or just filter.
-        # For simplicity and consistency in ML, we focus on OHLCV.
-        available_cols = [c for c in cols_to_keep if c in df.columns]
-        df = df[available_cols].copy()
         
-        # Drop any rows with NaN in critical columns
-        df.dropna(subset=["Close"], inplace=True)
+        # Standard columns for ML and tracking
+        cols_to_keep = ["Open", "High", "Low", "Close", "Volume", "Dividends", "Stock Splits"]
+        
+        # Ensure Dividends and Stock Splits exist, fill with 0.0 if missing
+        for col in ["Dividends", "Stock Splits"]:
+            if col not in df.columns:
+                df[col] = 0.0
+            else:
+                # Ensure no NaNs exist in these columns from the source
+                df[col] = df[col].fillna(0.0)
+        
+        # Keep only the requested columns that are now guaranteed to exist
+        df = df[cols_to_keep].copy()
+        
+        # Drop any rows with NaN in critical PRICE columns (Open, High, Low, Close)
+        df.dropna(subset=["Open", "High", "Low", "Close"], inplace=True)
         df.sort_index(inplace=True)
         
         # Deduplicate just in case

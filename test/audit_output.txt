@@ -1,0 +1,46 @@
+
+==================================================
+AUDIT REPORT FOR: data/features/AVGO.parquet
+==================================================
+Total rows: 4115
+Date Range: 2009-09-23 00:00:00-04:00 to 2026-02-02 00:00:00-05:00
+Total Null values: 0
+
+--- Feature Quality Checks ---
+RSI between 0-100: PASS
+RSI Mean: 54.86
+ATR mean: 1.56
+ADX mean: 23.18
+MACD mean: 0.58
+Rows below Support_30: 260 (6.3%)
+Rows above Resistance_30: 749 (18.2%)
+
+--- Target Distribution (Class Balance) ---
+Class 0 (NO MOVE): 58.08%
+Class 1 (2% MOVE): 41.92%
+Avg Volatility (rolling_vol_30): 0.0223
+==================================================
+
+
+==================================================
+AUDIT REPORT FOR: data/features/MSFT.parquet
+==================================================
+Total rows: 10017
+Date Range: 1986-04-30 00:00:00-04:00 to 2026-02-02 00:00:00-05:00
+Total Null values: 0
+
+--- Feature Quality Checks ---
+RSI between 0-100: PASS
+RSI Mean: 53.94
+ATR mean: 1.44
+ADX mean: 24.58
+MACD mean: 0.33
+Rows below Support_30: 814 (8.1%)
+Rows above Resistance_30: 1809 (18.1%)
+
+--- Target Distribution (Class Balance) ---
+Class 0 (NO MOVE): 63.55%
+Class 1 (2% MOVE): 36.45%
+Avg Volatility (rolling_vol_30): 0.0188
+==================================================
+

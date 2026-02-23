@@ -1,0 +1,95 @@
+/home/joka/.local/lib/python3.12/site-packages/xgboost/training.py:200: UserWarning: [15:24:15] WARNING: /__w/xgboost/xgboost/src/learner.cc:782: 
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+/home/joka/.local/lib/python3.12/site-packages/xgboost/training.py:200: UserWarning: [15:24:15] WARNING: /__w/xgboost/xgboost/src/learner.cc:782: 
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+Starting training pipeline for symbols: ['AAPL', 'MSFT', 'VRT', 'AVGO']
+
+==============================
+SYMBOL: AAPL
+==============================
+Loading feature data for AAPL from data/features/AAPL.parquet...
+Training on 9074 rows. Testing on 2269 rows.
+Error training AAPL: [15:24:15] /__w/xgboost/xgboost/src/data/gradient_index.h:99: Check failed: valid: Input data contains `inf` or a value too large, while `missing` is not set to `inf`
+Stack trace:
+  [bt] (0) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x2c1a8c) [0x7792ce2c1a8c]
+  [bt] (1) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x663600) [0x7792ce663600]
+  [bt] (2) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x67a5aa) [0x7792ce67a5aa]
+  [bt] (3) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x67d3cb) [0x7792ce67d3cb]
+  [bt] (4) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x67e05d) [0x7792ce67e05d]
+  [bt] (5) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x5dadf1) [0x7792ce5dadf1]
+  [bt] (6) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(XGQuantileDMatrixCreateFromCallback+0x178) [0x7792ce1cf5a8]
+  [bt] (7) /lib/x86_64-linux-gnu/libffi.so.8(+0x7e2e) [0x77933ed76e2e]
+  [bt] (8) /lib/x86_64-linux-gnu/libffi.so.8(+0x4493) [0x77933ed73493]
+
+
+
+==============================
+SYMBOL: MSFT
+==============================
+Loading feature data for MSFT from data/features/MSFT.parquet...
+Training on 8013 rows. Testing on 2004 rows.
+Model training completed.
+Evaluating model for MSFT...
+
+--- Metrics for MSFT ---
+Accuracy:  0.5434
+Precision (Buy Signal): 0.3998
+
+Full Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.66      0.58      0.62      1266
+           1       0.40      0.48      0.44       738
+
+    accuracy                           0.54      2004
+   macro avg       0.53      0.53      0.53      2004
+weighted avg       0.56      0.54      0.55      2004
+
+Error training MSFT: No module named 'matplotlib'
+
+==============================
+SYMBOL: VRT
+==============================
+Loading feature data for VRT from data/features/VRT.parquet...
+Training on 1480 rows. Testing on 371 rows.
+Error training VRT: [15:24:15] /__w/xgboost/xgboost/src/data/gradient_index.h:99: Check failed: valid: Input data contains `inf` or a value too large, while `missing` is not set to `inf`
+Stack trace:
+  [bt] (0) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x2c1a8c) [0x7792ce2c1a8c]
+  [bt] (1) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x663600) [0x7792ce663600]
+  [bt] (2) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x67a5aa) [0x7792ce67a5aa]
+  [bt] (3) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x67d3cb) [0x7792ce67d3cb]
+  [bt] (4) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x67e05d) [0x7792ce67e05d]
+  [bt] (5) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(+0x5dadf1) [0x7792ce5dadf1]
+  [bt] (6) /home/joka/.local/lib/python3.12/site-packages/xgboost/lib/libxgboost.so(XGQuantileDMatrixCreateFromCallback+0x178) [0x7792ce1cf5a8]
+  [bt] (7) /lib/x86_64-linux-gnu/libffi.so.8(+0x7e2e) [0x77933ed76e2e]
+  [bt] (8) /lib/x86_64-linux-gnu/libffi.so.8(+0x4493) [0x77933ed73493]
+
+
+
+==============================
+SYMBOL: AVGO
+==============================
+Loading feature data for AVGO from data/features/AVGO.parquet...
+Training on 3292 rows. Testing on 823 rows.
+Model training completed.
+Evaluating model for AVGO...
+
+--- Metrics for AVGO ---
+Accuracy:  0.5492
+Precision (Buy Signal): 0.5205
+
+Full Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.56      0.74      0.64       442
+           1       0.52      0.33      0.41       381
+
+    accuracy                           0.55       823
+   macro avg       0.54      0.53      0.52       823
+weighted avg       0.54      0.55      0.53       823
+
+Error training AVGO: No module named 'matplotlib'

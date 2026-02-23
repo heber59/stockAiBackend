@@ -1,3 +1,8 @@
-symbols: ["AAPL", "MSFT", "VRT", "AVGO"]
-alpha_vantage_api_key: "YOUR_ALPHA_VANTAGE_API_KEY"
+# Target symbols for reporting
+target_symbols: ["AAPL", "MSFT", "VRT", "AVGO", "SPY"]
+
+# Expanded list for Global Model training
+symbols: ["AAPL", "MSFT", "VRT", "AVGO", "SPY", "NVDA", "GOOGL", "AMZN", "META", "TSLA", "AMD", "QCOM", "NFLX"]
+
+alpha_vantage_api_key: "S8QITSFN3VDKWIBC"
 data_dir: "data/raw"
