@@ -1,8 +1,11 @@
+fastapi
+uvicorn
+xgboost
 pandas
 pyyaml
 yfinance
 requests
 pyarrow
-xgboost
-fastapi
-uvicorn
+scikit-learn
+pandas-ta
+matplotlib
