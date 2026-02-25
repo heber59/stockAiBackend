@@ -78,6 +78,8 @@ class FeatureEngineer:
         
         # 8. Numerical Stability: Handle Inf and NaN
         df.replace([np.inf, -np.inf], np.nan, inplace=True)
-        df.dropna(inplace=True)
+        # Drop rows where critical features are NaN (e.g., from indicators), but KEEP rows with NaN targets
+        feature_cols = [c for c in df.columns if c != 'Target']
+        df.dropna(subset=feature_cols, inplace=True)
         
         return df

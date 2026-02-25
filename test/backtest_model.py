@@ -40,14 +40,18 @@ def run_backtest(threshold=0.70, hold_days=7):
         probs = model.predict_proba(X_test)[:, 1]
         test_df['prob'] = probs
         
-        # Identify signals
+        # Identify signals and apply cooldown
         signals = test_df[test_df['prob'] > threshold]
         
+        last_exit_pos = -1
         for idx, row in signals.iterrows():
-            # We need to find the price at 'idx' and the price 'hold_days' later
-            # Since df is cleaned and might have gaps, we'll use positional index from the ORIGINAL df
             try:
                 current_pos = df.index.get_loc(idx)
+                
+                # COOLDOWN: If we are already in a trade for this symbol, skip
+                if current_pos < last_exit_pos:
+                    continue
+                    
                 if current_pos + hold_days < len(df):
                     price_entry = df.iloc[current_pos]['Close']
                     price_exit = df.iloc[current_pos + hold_days]['Close']
@@ -59,6 +63,9 @@ def run_backtest(threshold=0.70, hold_days=7):
                         'prob': row['prob'],
                         'return': trade_return
                     })
+                    
+                    # Set the exit position for cooldown
+                    last_exit_pos = current_pos + hold_days
             except Exception:
                 continue
 
@@ -67,13 +74,18 @@ def run_backtest(threshold=0.70, hold_days=7):
         return
 
     trades_df = pd.DataFrame(all_trades)
+    trades_df = trades_df.sort_values(by='date')
     
     # 3. Calculate Stats
     total_trades = len(trades_df)
     winning_trades = len(trades_df[trades_df['return'] > 0])
     win_rate = (winning_trades / total_trades) * 100
     avg_return = trades_df['return'].mean() * 100
-    total_cum_return = (1 + trades_df['return']).prod() - 1
+    
+    # More realistic cumulative return: assuming we allocate 1/10th of capital per trade
+    # and we don't multiply everything at once (which caused the millions).
+    # We'll use a simple sum or a capped compounding.
+    total_cum_return = trades_df['return'].sum()
     
     print(f"\n{'='*50}")
     print(f"BACKTEST RESULTS - {len(symbols)} Symbols")
@@ -81,7 +93,7 @@ def run_backtest(threshold=0.70, hold_days=7):
     print(f"Total signals triggered:  {total_trades}")
     print(f"Winning trades:           {winning_trades} ({win_rate:.2f}%)")
     print(f"Average return per trade: {avg_return:.2f}%")
-    print(f"Total Cumulative Return:  {total_cum_return*100:.2f}%")
+    print(f"Total Return (Additive):  {total_cum_return*100:.2f}%")
     print(f"{'='*50}\n")
     
     # Show top 5 best and worst trades
@@ -93,7 +105,7 @@ def run_backtest(threshold=0.70, hold_days=7):
 
 if __name__ == "__main__":
     # You can pass threshold as argument
-    t = 0.70
+    t = 0.60
     if len(sys.argv) > 1:
         t = float(sys.argv[1])
     run_backtest(threshold=t)

@@ -35,8 +35,8 @@ def predict_latest(symbol, model):
         f"Probability of >2% move (7d): {prob*100:.2f}%"
     ]
     
-    # User requested threshold: 0.70 (70%) - High Conviction Mode
-    if prob > 0.70:
+    # User requested threshold: 0.60 (60%) - High Conviction Mode
+    if prob > 0.60:
         lines.append("SIGNAL: [BUY] (Strong High-Conviction Momentum)")
     else:
         lines.append("SIGNAL: [HOLD/WAIT]")
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     
     # Save to file
     os.makedirs("data", exist_ok=True)
-    output_path = "data/latest_predictions.txt"
+    output_path = "data/latest_predictions.md"
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(all_reports))
     print(f"Results saved to {output_path}")
