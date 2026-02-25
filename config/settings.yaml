@@ -1,8 +1,19 @@
-# Target symbols for reporting
-target_symbols: ["AAPL", "MSFT", "VRT", "AVGO", "SPY"]
+# Target symbols for reporting (Core representative set)
+target_symbols: ["AAPL", "MSFT", "NVDA", "TSLA", "VRT", "JPM", "GS", "JNJ", "WMT", "XOM", "NEE", "SPY", "QQQ"]
 
-# Expanded list for Global Model training
-symbols: ["AAPL", "MSFT", "VRT", "AVGO", "SPY", "NVDA", "GOOGL", "AMZN", "META", "TSLA", "AMD", "QCOM", "NFLX"]
+# Extreme Diversified List for Global Model training
+# Areas: Tech, Finance, Energy, Healthcare, Utilities, Retail, Growth, Semi.
+symbols: [
+  "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "TSLA", "AMD", "QCOM", "NFLX", "AVGO", "SMCI", # Tech/Big
+  "TSM", "ASML", "INTC", "MU", "ARM", # Semis
+  "JPM", "BAC", "GS", "MS", "V", "MA", "PYPL", # Finance
+  "XOM", "CVX", "SHEL", "BP", "XLE", # Energy/Oil
+  "JNJ", "LLY", "UNH", "PFE", "ABBV", # Healthcare
+  "WMT", "PG", "COST", "KO", "PEP", # Consumer/Retail
+  "XLU", "NEE", "DUK", # Utilities/Electric
+  "BA", "CAT", "GE", # Industrial
+  "SPY", "QQQ", "VRT", "MSTR", "COIN" # Indices & High Vol
+]
 
 alpha_vantage_api_key: "S8QITSFN3VDKWIBC"
 data_dir: "data/raw"

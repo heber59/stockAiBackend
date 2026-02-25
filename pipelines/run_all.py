@@ -32,7 +32,7 @@ def main():
     print("🚀 STARTING FULL XGBOOST PIPELINE 🚀")
     
     os.makedirs("data", exist_ok=True)
-    log_path = "data/pipeline_log.txt"
+    log_path = "data/pipeline_log.log"
     # Clear previous log
     with open(log_path, "w", encoding="utf-8") as f:
         f.write("--- FULL PIPELINE EXECUTION LOG ---\n")
@@ -53,7 +53,7 @@ def main():
             
     print(f"\n✅ FULL PIPELINE EXECUTED SUCCESSFULLY ✅")
     print(f"Metrics and logs saved to: {log_path}")
-    print("Final signals saved to: data/latest_predictions.txt")
+    print("Final signals saved to: data/latest_predictions.md")
 
 if __name__ == "__main__":
     main()

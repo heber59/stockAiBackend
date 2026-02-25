@@ -88,6 +88,7 @@ The system uses a probabilistic machine learning approach.
 final_probability =
 0.7 * XGBoost +
 0.3 * LSTM
+```
 
 This ensemble approach improves prediction robustness and accuracy.
 
@@ -159,6 +160,7 @@ services/
 
 config/
   settings.yaml
+```
 
 
 ## Pipeline Responsibilities

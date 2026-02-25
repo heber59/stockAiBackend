@@ -51,6 +51,10 @@ class StockModelTrainer:
 
     def _execute_training(self, train_df, test_df, label):
         """Internal method to run the actual fit and evaluation."""
+        # Ensure we only use rows with valid targets for training/testing
+        train_df = train_df.dropna(subset=[self.stock_model.TARGET])
+        test_df = test_df.dropna(subset=[self.stock_model.TARGET])
+        
         X_train = train_df[self.stock_model.FEATURES]
         y_train = train_df[self.stock_model.TARGET]
         
