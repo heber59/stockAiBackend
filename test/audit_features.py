@@ -42,18 +42,27 @@ def audit_features(file_path):
         print(f"Rows below Support_30: {outside_lower} ({outside_lower/len(df)*100:.1f}%)")
         print(f"Rows above Resistance_30: {outside_upper} ({outside_upper/len(df)*100:.1f}%)")
 
-    # 4. Target Variable Audit (New threshold-based)
+    # 4. Target Variable Audit (Multiclass: 0=Bearish, 1=Neutral, 2=Bullish)
     if 'Target' in df.columns:
-        counts = df['Target'].value_counts(normalize=True)
+        counts = df['Target'].value_counts(normalize=True).sort_index()
         print("\n--- Target Distribution (Class Balance) ---")
+        class_labels = {0: 'BEARISH (<-2%)', 1: 'NEUTRAL', 2: 'BULLISH (>+2%)'}
         for cls, pct in counts.items():
-            action = "2% MOVE" if cls == 1 else "NO MOVE"
-            print(f"Class {cls} ({action}): {pct*100:.2f}%")
+            label = class_labels.get(int(cls), str(cls))
+            print(f"Class {int(cls)} ({label}): {pct*100:.2f}%")
         
-        if counts.get(1, 0) < 0.15:
-            print("WARNING: Class 1 is very rare (less than 15%). Consider lowering threshold.")
+        if counts.get(2, 0) < 0.10:
+            print("WARNING: BULLISH class is very rare (<10%). Model may struggle to detect upside.")
+        if counts.get(0, 0) < 0.10:
+            print("WARNING: BEARISH class is very rare (<10%). Model may struggle to detect downside.")
 
-    # 5. Volatility Check
+    # 5. VIX Regime Check
+    if 'VIX_close' in df.columns:
+        high_regime_pct = df['VIX_high_regime'].mean() * 100 if 'VIX_high_regime' in df.columns else 0
+        print(f"\n--- VIX Regime ---")
+        print(f"Rows in HIGH VOLATILITY regime (VIX>30): {high_regime_pct:.1f}%")
+
+    # 6. Volatility Check
     if 'rolling_vol_30' in df.columns:
          print(f"Avg Volatility (rolling_vol_30): {df['rolling_vol_30'].mean():.4f}")
 
@@ -67,3 +76,4 @@ if __name__ == "__main__":
             audit_features(os.path.join(feat_dir, f))
     else:
         print("Features directory not found.")
+
