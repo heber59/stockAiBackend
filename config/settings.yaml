@@ -1,3 +1,65 @@
-symbols: ["AAPL", "MSFT", "VRT", "AVGO"]
-alpha_vantage_api_key: "YOUR_ALPHA_VANTAGE_API_KEY"
+# Target symbols for reporting (Core representative set)
+target_symbols: [
+  "AAPL", "MSFT", "NVDA", "TSLA", "MELI", "VRT", "JPM", "GS", "JNJ", "WMT",
+  "XOM", "NEE", "SPY", "QQQ", "META", "GOOGL", "AMZN", "AMD", "NFLX", "AVGO",
+  "COIN", "MSTR", "SHOP", "BABA", "NIO", "PLTR", "SQ", "RIVN", "LCID", "SMCI"
+]
+
+# Sector Mappings (ETF Benchmark)
+# XLK: Tech, XLF: Finance, XLE: Energy, XLV: Health, XLY: Retail, XLU: Utilities, XLI: Ind, XLC: Comm
+sector_map: {
+  # XLK (Technology)
+  "AAPL": "XLK", "MSFT": "XLK", "NVDA": "XLK", "AMD": "XLK", "AVGO": "XLK", "QCOM": "XLK", "ARM": "XLK", "SMCI": "XLK",
+  "INTC": "XLK", "MU": "XLK", "TSM": "XLK", "ASML": "XLK", "ADBE": "XLK", "CRM": "XLK", "SNOW": "XLK", "NOW": "XLK",
+  "ORCL": "XLK", "CSCO": "XLK", "AMAT": "XLK", "LRCX": "XLK", "KLAC": "XLK", "MCHP": "XLK", "PLTR": "XLK", "TEAM": "XLK",
+  "DDOG": "XLK", "NET": "XLK", "ZS": "XLK", "CRWD": "XLK", "OKTA": "XLK",
+
+  # XLC (Communication)
+  "GOOGL": "XLC", "META": "XLC", "NFLX": "XLC", "DIS": "XLC", "CHTR": "XLC", "VZ": "XLC", "TMUS": "XLC", "SPOT": "XLC",
+
+  # XLY (Consumer Discretionary)
+  "AMZN": "XLY", "TSLA": "XLY", "HD": "XLY", "MCD": "XLY", "NKE": "XLY", "SBUX": "XLY", "BKNG": "XLY", "MELI": "XLY",
+  "SHOP": "XLY", "ABNB": "XLY", "DASH": "XLY", "RBLX": "XLY", "UBER": "XLY", "LYFT": "XLY", "NIO": "XLY", "RIVN": "XLY", "LCID": "XLY",
+
+  # XLF (Finance)
+  "JPM": "XLF", "BAC": "XLF", "GS": "XLF", "MS": "XLF", "V": "XLF", "MA": "XLF", "PYPL": "XLF", "BLK": "XLF", 
+  "COIN": "XLF", "MSTR": "XLF", "SQ": "XLF", "C": "XLF", "WFC": "XLF", "AXP": "XLF", "SCHW": "XLF",
+
+  # XLE (Energy)
+  "XOM": "XLE", "CVX": "XLE", "SHEL": "XLE", "BP": "XLE", "OXY": "XLE", "COP": "XLE", "SLB": "XLE",
+
+  # XLV (Health Care)
+  "JNJ": "XLV", "LLY": "XLV", "UNH": "XLV", "PFE": "XLV", "ABBV": "XLV", "MRNA": "XLV", "BNTX": "XLV", "GILD": "XLV", "BIIB": "XLV", "REGN": "XLV",
+
+  # XLP (Consumer Staples - Using XLY fallback if XLP not downloaded)
+  "WMT": "XLY", "PG": "XLY", "COST": "XLY", "KO": "XLY", "PEP": "XLY", "TGT": "XLY",
+
+  # XLU (Utilities)
+  "XLU": "XLU", "NEE": "XLU", "DUK": "XLU", "SO": "XLU", "D": "XLU",
+
+  # XLI (Industrials)
+  "BA": "XLI", "CAT": "XLI", "GE": "XLI", "LMT": "XLI", "RTX": "XLI", "NOC": "XLI"
+}
+
+# Full training universe
+symbols: [
+  "AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "TSLA", "AMD", "QCOM", "NFLX",
+  "AVGO", "SMCI", "MELI", "SHOP", "SNOW", "CRM", "NOW", "ADBE", "INTU", "UBER",
+  "LYFT", "ABNB", "DASH", "RBLX", "SPOT", "DDOG", "NET", "ZS", "CRWD", "OKTA",
+  "TSM", "ASML", "INTC", "MU", "ARM", "LRCX", "AMAT", "KLAC", "MCHP", "SWKS",
+  "JPM", "BAC", "GS", "MS", "V", "MA", "PYPL", "COIN", "MSTR", "SQ",
+  "BLK", "C", "WFC", "AXP", "SCHW",
+  "XOM", "CVX", "SHEL", "BP", "XLE", "OXY", "COP", "SLB",
+  "JNJ", "LLY", "UNH", "PFE", "ABBV", "MRNA", "BNTX", "GILD", "BIIB", "REGN",
+  "WMT", "PG", "COST", "KO", "PEP", "TGT", "HD", "NKE", "SBUX", "MCD",
+  "XLU", "NEE", "DUK", "SO", "D",
+  "BA", "CAT", "GE", "LMT", "RTX", "NOC",
+  "RIVN", "LCID", "XPEV", "NIO", "F", "GM",
+  "BABA", "JD", "PDD", "BIDU",
+  "MELI", "NU", "STNE",
+  "PLTR", "SOUN", "IONQ", "QBTS", "RGTI", "BBAI",
+  "SPY", "QQQ", "VRT", "GLD", "SLV", "TLT", "HYG"
+]
+
+alpha_vantage_api_key: "S8QITSFN3VDKWIBC"
 data_dir: "data/raw"

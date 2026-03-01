@@ -88,6 +88,7 @@ The system uses a probabilistic machine learning approach.
 final_probability =
 0.7 * XGBoost +
 0.3 * LSTM
+```
 
 This ensemble approach improves prediction robustness and accuracy.
 
@@ -159,6 +160,7 @@ services/
 
 config/
   settings.yaml
+```
 
 
 ## Pipeline Responsibilities
@@ -236,3 +238,23 @@ This system follows key machine learning engineering principles:
 - Support multiple stocks simultaneously
 - Track long-term model performance
 - Optimize training using GPU acceleration
+
+---
+
+## Optional: Automation
+
+### Data Pipeline Persistence (Cron Job)
+
+To ensure the system always has the latest market data without manual intervention, you can set up a `cron` job on your WSL or Linux environment. This will automatically execute the data update pipeline every weekday after the market close.
+
+#### Example Configuration
+1. Open your crontab:
+   ```bash
+   crontab -e
+   ```
+2. Add the following line to run the update every Monday-Friday at 6:00 PM EST:
+   ```text
+   0 18 * * 1-5 cd /home/joka/personal/stockAiBackend && /usr/bin/python3 pipelines/pipeline_update_data.py >> logs/data_update.log 2>&1
+   ```
+
+*Note: Adjust the path to your Python interpreter and project directory as needed.*

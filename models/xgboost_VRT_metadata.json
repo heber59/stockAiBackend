@@ -1,0 +1,33 @@
+{
+    "features": [
+        "returns_1d",
+        "returns_3d",
+        "returns_5d",
+        "returns_7d",
+        "returns_10d",
+        "returns_14d",
+        "ATR",
+        "rolling_vol_30",
+        "ADX",
+        "MACD",
+        "MACD_signal",
+        "MACD_hist",
+        "RSI",
+        "volume_change",
+        "volume_sma_30",
+        "volume_ratio",
+        "Support_30",
+        "Resistance_30",
+        "Dist_to_Support_30",
+        "Dist_to_Resistance_30"
+    ],
+    "target": "Target",
+    "params": {
+        "n_estimators": 100,
+        "max_depth": 5,
+        "learning_rate": 0.1,
+        "objective": "binary:logistic",
+        "random_state": 42,
+        "eval_metric": "logloss"
+    }
+}
