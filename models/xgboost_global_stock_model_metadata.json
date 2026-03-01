@@ -23,15 +23,26 @@
         "SPY_returns_1d",
         "SPY_returns_3d",
         "SPY_returns_7d",
-        "SPY_volatility"
+        "SPY_volatility",
+        "VIX_close",
+        "VIX_high_regime"
     ],
     "target": "Target",
+    "num_classes": 3,
+    "class_labels": {
+        "0": "BEARISH",
+        "1": "NEUTRAL",
+        "2": "BULLISH"
+    },
     "params": {
-        "n_estimators": 100,
+        "n_estimators": 150,
         "max_depth": 5,
-        "learning_rate": 0.1,
-        "objective": "binary:logistic",
+        "learning_rate": 0.08,
+        "objective": "multi:softprob",
+        "num_class": 3,
         "random_state": 42,
-        "eval_metric": "logloss"
+        "eval_metric": "mlogloss",
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
     }
 }

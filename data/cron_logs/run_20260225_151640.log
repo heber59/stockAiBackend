@@ -1,4 +1,5 @@
---- FULL PIPELINE EXECUTION LOG ---
+🚀 [Wed Feb 25 15:16:40 -05 2026] Starting Automated Pipeline...
+🚀 STARTING FULL XGBOOST PIPELINE 🚀
 
 ############################################################
 ### STEP: Updating Raw Market Data
@@ -375,8 +376,6 @@ Saving 4750 rows to data/raw/HYG.parquet
 Fetching VIX data (market regime filter)...
 VIX data saved: 9104 rows to data/raw/^VIX.parquet
 
-ERRORS/WARNINGS:
-$SQ: possibly delisted; no timezone found
 
 ############################################################
 ### STEP: Generating Advanced Features
@@ -623,6 +622,7 @@ Saving 5393 rows of engineered data to data/features/CRM.parquet
 Processing features for QQQ...
 Saving 6722 rows of engineered data to data/features/QQQ.parquet
 
+
 ############################################################
 ### STEP: Auditing Feature Quality
 ############################################################
@@ -679,6 +679,7 @@ Class 2 (BULLISH (>+2%)): 29.55%
 Rows in HIGH VOLATILITY regime (VIX>30): 8.5%
 Avg Volatility (rolling_vol_30): 0.0182
 ==================================================
+
 
 
 ############################################################
@@ -738,6 +739,7 @@ Model and metadata saved to models
 
 Global model successfully trained and saved.
 
+
 ############################################################
 ### STEP: Backtesting PnL (Buy & Hold 7 days)
 ############################################################
@@ -769,6 +771,7 @@ Top 5 Worst Trades:
 710    QQQ 2025-03-28  0.652887 -0.112765
 126   AAPL 2020-03-13  0.606312 -0.111847
 410    SPY 2025-03-26  0.816546 -0.111346
+
 
 ############################################################
 ### STEP: Generating Latest Predictions
@@ -810,3 +813,9 @@ LCID   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.9pts  B:42.6% N:12
 SMCI   ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +3.7pts  B:42.0% N:12.3% Be:45.7%
 ====================================================================================================
 Results saved to data/latest_predictions.md
+
+
+✅ FULL PIPELINE EXECUTED SUCCESSFULLY ✅
+Metrics and logs saved to: data/pipeline_log.log
+Final signals saved to: data/latest_predictions.md
+✅ [Wed Feb 25 15:26:49 -05 2026] Pipeline finished. Log saved to /home/joka/personal/stockAiBackend/data/cron_logs/run_20260225_151640.log
