@@ -29,8 +29,8 @@ env/
 .env
 
 # Data and Models
-data/raw/
-data/features/
+# data/raw/
+# data/features/
 models/*.pkl
 models/metadata.json
 
