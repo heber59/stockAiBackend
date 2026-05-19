@@ -117,6 +117,44 @@ class StockModelTrainer:
                 target_names=['BEARISH', 'NEUTRAL', 'BULLISH'],
                 zero_division=0
             ))
+            
+            # Calculate and print clear human-readable percentages
+            overall_acc = accuracy_score(all_test_actuals, all_test_preds) * 100
+            
+            # Extract precision for each class manually using classification_report as dict
+            report_dict = classification_report(
+                all_test_actuals, all_test_preds,
+                target_names=['BEARISH', 'NEUTRAL', 'BULLISH'],
+                zero_division=0,
+                output_dict=True
+            )
+            
+            bearish_prec = report_dict['BEARISH']['precision'] * 100
+            neutral_prec = report_dict['NEUTRAL']['precision'] * 100
+            bullish_prec = report_dict['BULLISH']['precision'] * 100
+            
+            print(f"\n📊 HUMAN-READABLE METRICS SUMMARY ({label}):")
+            print(f"  👉 TOTAL MODEL ACCURACY (Overall): {overall_acc:.2f}%")
+            print(f"  👉 BEARISH Prediction Precision (Category %): {bearish_prec:.2f}%")
+            print(f"  👉 NEUTRAL Prediction Precision (Category %): {neutral_prec:.2f}%")
+            print(f"  👉 BULLISH Prediction Precision (Category %): {bullish_prec:.2f}%")
+            print(f"{'='*60}\n")
+
+        # Train and save a leakage-free model for backtesting (data up to 2020-12-31)
+        train_cutoff = "2020-12-31"
+        historical_df = df[df.index <= train_cutoff]
+        if len(historical_df) > 0:
+            print(f"\n  [Historical Train] Training leakage-free backtest model (up to {train_cutoff}) for {label}...")
+            hist_clean = self.fe.filter_outlier_periods(historical_df)
+            X_hist = hist_clean[self.stock_model.FEATURES]
+            y_hist = hist_clean[self.stock_model.TARGET].astype(int)
+            
+            hist_model = StockModel(params=self.stock_model.params)
+            hist_model.model.fit(X_hist, y_hist)
+            
+            hist_name = "global_stock_model_historical" if label == "GLOBAL_MODEL" else f"{label}_historical"
+            hist_model.save("models", f"xgboost_{hist_name}")
+            print(f"  [Historical Train] Leakage-free model saved as models/xgboost_{hist_name}.json")
 
         # Final production model: train on ALL clean data
         print(f"\n  [Final Train] Training production model on all clean data for {label}...")

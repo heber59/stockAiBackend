@@ -10,14 +10,20 @@ from services.models.stock_model import StockModel
 def run_backtest(threshold=0.70, hold_days=7):
     print(f"\n🚀 STARTING BACKTEST (Threshold: {threshold}, Hold: {hold_days} days) 🚀")
     
-    # 1. Load Global Model
+    # 1. Load Model (prefer leakage-free historical model if available)
     model_dir = "models"
     model = StockModel()
+    
     try:
-        model.load(model_dir, "xgboost_global_stock_model")
+        model.load(model_dir, "xgboost_global_stock_model_historical")
+        print("✅ SUCCESS: Loaded leakage-free historical model (trained up to 2020) to prevent overfitting/lookahead bias.")
     except FileNotFoundError:
-        print("Error: Global model not found. Run training pipeline first.")
-        return
+        try:
+            model.load(model_dir, "xgboost_global_stock_model")
+            print("⚠️ WARNING: Historical model not found. Loaded production model (trained on all data), which contains data leakage for the 2021-2026 backtest window.")
+        except FileNotFoundError:
+            print("❌ Error: No global model found. Run training pipeline first.")
+            return
 
     # 2. Get all feature files
     features_dir = "data/features"
@@ -35,9 +41,9 @@ def run_backtest(threshold=0.70, hold_days=7):
         if len(test_df) < hold_days:
             continue
             
-        # Get probabilities
+        # Get probabilities (Class 2 is BULLISH)
         X_test = test_df[model.FEATURES]
-        probs = model.predict_proba(X_test)[:, 1]
+        probs = model.predict_proba(X_test)[:, 2]
         test_df['prob'] = probs
         
         # Identify signals and apply cooldown

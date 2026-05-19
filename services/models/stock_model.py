@@ -32,15 +32,18 @@ class StockModel:
     def __init__(self, params=None):
         # Robust parameters for 3-class financial classification
         self.params = params or {
-            'n_estimators': 150,
-            'max_depth': 5,
-            'learning_rate': 0.08,
+            'n_estimators': 200,          # Increased from 150 to allow more gradual learning
+            'max_depth': 3,               # Decreased from 5 to significantly reduce overfitting on noisy financial data
+            'learning_rate': 0.05,        # Decreased from 0.08 for more robust step convergence
             'objective': 'multi:softprob',
             'num_class': self.NUM_CLASSES,
             'random_state': 42,
             'eval_metric': 'mlogloss',
-            'subsample': 0.8,
-            'colsample_bytree': 0.8,
+            'subsample': 0.7,             # Decreased from 0.8 to introduce more variance reduction
+            'colsample_bytree': 0.7,      # Decreased from 0.8 to force trees to utilize non-volatility features
+            'reg_alpha': 0.1,             # L1 regularization to encourage feature sparsity and prevent overfitting
+            'reg_lambda': 2.0,            # L2 regularization to control model weights in high-dimensional noise
+            'gamma': 0.1,                 # Minimum loss reduction to partition leaf node
         }
         self.model = xgb.XGBClassifier(**self.params)
 
