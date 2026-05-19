@@ -111,7 +111,7 @@ def run_backtest(threshold=0.70, hold_days=7):
 
 if __name__ == "__main__":
     # You can pass threshold as argument
-    t = 0.60
+    t = 0.40
     if len(sys.argv) > 1:
         t = float(sys.argv[1])
     run_backtest(threshold=t)

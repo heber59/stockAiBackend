@@ -1,34 +1,34 @@
-# Latest Trading Signals (2026-02-25 15:26)
+# Latest Trading Signals (2026-05-19 18:31)
 
 SYMBOL SIGNAL     CONFIDENCE METRICS
 ----------------------------------------------------------------------------------------------------
-AAPL   🟡 HOLD     ███░░░░░░░  Gap: +10.7pts  B:31.3% N:41.9% Be:26.8%  [MODERATE]
-MSFT   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.0pts  B:34.7% N:31.6% Be:33.7%
-NVDA   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +0.6pts  B:35.8% N:29.0% Be:35.2%
-TSLA   ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +4.2pts  B:25.8% N:39.2% Be:35.0%
-MELI   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.2pts  B:39.5% N:22.2% Be:38.3%
-VRT    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.2pts  B:42.6% N:12.5% Be:44.9%
-JPM    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +0.2pts  B:33.7% N:32.7% Be:33.5%
-GS     ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +0.8pts  B:35.4% N:30.0% Be:34.6%
-JNJ    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.6pts  B:32.3% N:35.2% Be:32.5%
-WMT    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.4pts  B:32.6% N:34.4% Be:33.0%
-XOM    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.7pts  B:32.2% N:34.8% Be:33.0%
-NEE    ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +4.8pts  B:31.5% N:36.7% Be:31.9%
-SPY    🟡 HOLD     ██████████  Gap: +95.2pts  B: 1.2% N:97.0% Be: 1.8%  [HIGH CONVICTION]
-QQQ    🟡 HOLD     ██████████  Gap: +73.6pts  B: 6.2% N:83.7% Be:10.1%  [HIGH CONVICTION]
-META   ⚪ NO SIGNAL ███░░░░░░░  Gap:  +9.8pts  B:32.9% N:24.4% Be:42.7%
-GOOGL  🟡 HOLD     ██████████  Gap: +30.3pts  B:23.8% N:54.2% Be:22.0%  [HIGH CONVICTION]
-AMZN   ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +8.2pts  B:39.2% N:31.0% Be:29.8%
-AMD    ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +4.6pts  B:40.5% N:14.3% Be:45.1%
-NFLX   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.3pts  B:33.8% N:36.0% Be:30.2%
-AVGO   ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +6.9pts  B:34.3% N:24.5% Be:41.2%
-COIN   ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +3.4pts  B:42.0% N:12.5% Be:45.5%
-MSTR   🔴 SELL     █████░░░░░  Gap: +16.9pts  B:35.9% N:11.3% Be:52.8%  [MODERATE]
-SHOP   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +0.1pts  B:42.9% N:14.3% Be:42.8%
-BABA   🔴 SELL     ███░░░░░░░  Gap: +10.3pts  B:36.7% N:16.3% Be:47.0%  [MODERATE]
-NIO    ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +5.4pts  B:42.5% N:20.5% Be:37.0%
-PLTR   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.8pts  B:41.4% N:15.4% Be:43.2%
+AAPL   🟡 HOLD     ████░░░░░░  Gap: +12.9pts  B:28.4% N:42.2% Be:29.4%  [MODERATE]
+MSFT   ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +7.4pts  B:28.8% N:39.3% Be:31.9%
+NVDA   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.1pts  B:32.4% N:32.8% Be:34.9%
+TSLA   🔴 SELL     ███░░░░░░░  Gap: +11.2pts  B:29.2% N:29.8% Be:41.0%  [MODERATE]
+MELI   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.2pts  B:39.6% N:18.7% Be:41.7%
+VRT    ⚪ NO SIGNAL ███░░░░░░░  Gap:  +9.5pts  B:35.5% N:19.4% Be:45.0%
+JPM    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +0.0pts  B:33.4% N:33.4% Be:33.3%
+GS     ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.3pts  B:34.9% N:29.0% Be:36.2%
+JNJ    🟡 HOLD     █████░░░░░  Gap: +15.6pts  B:28.7% N:44.3% Be:27.0%  [MODERATE]
+WMT    ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +5.6pts  B:31.8% N:37.4% Be:30.8%
+XOM    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.3pts  B:36.8% N:27.8% Be:35.5%
+NEE    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.1pts  B:34.1% N:32.8% Be:33.1%
+SPY    🟡 HOLD     ██████████  Gap: +57.9pts  B: 9.9% N:74.0% Be:16.1%  [HIGH CONVICTION]
+QQQ    🟡 HOLD     ██████████  Gap: +32.7pts  B:15.9% N:58.4% Be:25.7%  [HIGH CONVICTION]
+META   ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +7.2pts  B:34.5% N:23.8% Be:41.7%
+GOOGL  ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.4pts  B:34.2% N:29.2% Be:36.6%
+AMZN   ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +8.7pts  B:31.0% N:39.6% Be:29.4%
+AMD    ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +8.2pts  B:39.6% N:12.5% Be:47.8%
+NFLX   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.8pts  B:38.2% N:26.4% Be:35.4%
+AVGO   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.8pts  B:36.3% N:24.6% Be:39.1%
+COIN   ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +4.7pts  B:39.9% N:15.6% Be:44.6%
+MSTR   ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +7.0pts  B:38.2% N:16.5% Be:45.2%
+SHOP   ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +4.5pts  B:40.9% N:13.7% Be:45.4%
+BABA   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +0.0pts  B:37.0% N:25.9% Be:37.0%
+NIO    ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.9pts  B:42.1% N:17.6% Be:40.2%
+PLTR   ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +6.0pts  B:37.1% N:19.7% Be:43.2%
 Error: No feature data found for SQ
-RIVN   🔴 SELL     ████░░░░░░  Gap: +12.6pts  B:38.9% N: 9.7% Be:51.5%  [MODERATE]
-LCID   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +2.9pts  B:42.6% N:12.0% Be:45.5%
-SMCI   ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +3.7pts  B:42.0% N:12.3% Be:45.7%
+RIVN   ⚪ NO SIGNAL █░░░░░░░░░  Gap:  +3.0pts  B:41.4% N:20.2% Be:38.4%
+LCID   ⚪ NO SIGNAL ░░░░░░░░░░  Gap:  +1.9pts  B:42.6% N:12.9% Be:44.5%
+SMCI   ⚪ NO SIGNAL ██░░░░░░░░  Gap:  +8.0pts  B:40.0% N:11.9% Be:48.0%
